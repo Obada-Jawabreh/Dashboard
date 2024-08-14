@@ -13,6 +13,7 @@ exports.up = function(knex) {
         table.string('list_name').notNullable(); // List name
         table.integer('district_id').unsigned().notNullable() // Foreign key for district_id
         table.integer('vote_count').defaultTo(0); // Vote count
+        table.string('logo'); // Column for the logo
         table.timestamps(true, true); // Created at and updated at timestamps
 
         table
