@@ -10,7 +10,7 @@ module.exports = {
       host: "localhost",
       user: "postgres",
       password: "obada4047",
-      database: "blog_app",
+      database: "Jordanian-Elections-Project",
     },
     migrations: {
       directory: "./migrations",
