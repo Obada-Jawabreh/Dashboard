@@ -2,6 +2,7 @@ import React from "react";
 import TopBar from "./TopBar";
 import Sidebar from "./Sidebar";
 import Home from "./Home";
+
 import Chat from "./Chat";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
@@ -19,6 +20,7 @@ const Dashboard = () => {
             </Routes>
           </div>
         </div>
+
       </div>
     </BrowserRouter>
   );
