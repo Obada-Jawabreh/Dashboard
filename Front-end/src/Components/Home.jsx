@@ -85,7 +85,7 @@ const Home = () => {
           </tbody>
         </table>
       </div>
-      <ElectionCharts/>
+      <ElectionCharts />
     </div>
   );
 };

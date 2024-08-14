@@ -2,16 +2,15 @@ import React from "react";
 import TopBar from "./TopBar";
 import Sidebar from "./Sidebar";
 import Home from "./Home";
-
 import Chat from "./Chat";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 const Dashboard = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-background ">
+      <div className="min-h-screen bg-background">
         <TopBar />
-        <div className="flex">
+        <div className="flex flex-row-reverse">
           <Sidebar />
           <div className="flex-grow">
             <Routes>
@@ -20,7 +19,6 @@ const Dashboard = () => {
             </Routes>
           </div>
         </div>
-
       </div>
     </BrowserRouter>
   );

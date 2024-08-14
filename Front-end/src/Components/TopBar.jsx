@@ -11,7 +11,7 @@ const TopBar = () => {
           aria-hidden="true"
           alt="brand-logo"
           src="https://openui.fly.dev/openui/24x24.svg?text=😊"
-          className="ml-2" 
+          className="ml-2"
         />
         <span className="font-bold text-lg">BRAND</span>
       </div>
@@ -19,7 +19,7 @@ const TopBar = () => {
         <input
           type="text"
           placeholder="بحث..."
-          className="border border-border rounded-lg p-2 ml-4" 
+          className="border border-border rounded-lg p-2 ml-4"
         />
         <button className="bg-secondary text-secondary-foreground p-2 rounded-lg ml-2">
           <img
@@ -29,11 +29,7 @@ const TopBar = () => {
           />
         </button>
         <div className="relative ml-4">
-          
-          
           <button className="relative p-2 ml-2">
-            
-            
             <img
               aria-hidden="true"
               alt="notifications-icon"
@@ -44,8 +40,6 @@ const TopBar = () => {
             </span>
           </button>
           <button className="relative p-2 ml-2">
-            
-            
             <img
               aria-hidden="true"
               alt="messages-icon"
@@ -57,8 +51,6 @@ const TopBar = () => {
           </button>
         </div>
         <div className="flex items-center ml-4">
-          
-          
           <img
             aria-hidden="true"
             alt="user-avatar"
