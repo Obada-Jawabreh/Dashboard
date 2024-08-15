@@ -15,7 +15,7 @@ exports.up = function (knex) {
       table.boolean("is_voted_local").defaultTo(false); // عمود التصويت المحلي
       table.string("gender").notNullable(); // عمود الجنس
       table.integer("OTP").unique();
-      table.string("passwoard");
+      table.string("password");
       table.timestamps(true, true); // الطوابع الزمنية
     });
   };

@@ -1,6 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("contact_us", function (table) {
-    table.string("national_id").notNullable().primary(); // الرقم الوطني كـ string وغير قابل للنول
+    table.increments("id").primary(); 
+    table.string("national_id").notNullable()// الرقم الوطني كـ string وغير قابل للنول
     table.string("name").notNullable(); // اسم المستخدم
     table.string("email").notNullable(); // البريد الإلكتروني
     table.string("subject").notNullable(); // عنوان الرسالة
