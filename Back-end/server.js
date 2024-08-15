@@ -15,7 +15,7 @@ console.log("Database configuration:", knex.client.config.connection);
 const adminRoutes = require("./Routes/adminRoutes");
 app.use("/api/admin", adminRoutes);
 
-const citizensRoutes = require("./Routes/citizens");
+const citizensRoutes = require("./Routes/citizensRoutes");
 app.use("/api/crud", citizensRoutes);
 
 console.log("Routes initialized");

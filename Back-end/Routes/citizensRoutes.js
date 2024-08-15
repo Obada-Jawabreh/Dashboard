@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const citizensController = require("../Controllers/citizens"); // تأكد من المسار الصحيح
+const citizensController = require("../Controllers/citizensController"); // تأكد من المسار الصحيح
 
 // تأكد من أن getCitizenss يتم تصديره بشكل صحيح من وحدة التحكم
 router.get("/get-citizens", citizensController.getCitizenss); // تأكد من تطابق الاسم
