@@ -1,33 +1,24 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-const JWT_SECRET = process.env.JWT_SECRET;
-
-// Middleware للتحقق من صحة التوكن
 const auth = (req, res, next) => {
+  const token = req.cookies.Token;
+  console.log("Received token:", token);
+  if (!token) {
+    return res.status(401).json({ message: "No token provided" }) ;
+  }
   try {
-    // التأكد من وجود Header خاص بالتوكن
-    const authHeader = req.header("Authorization");
-
-    if (!authHeader) {
-      return res.status(401).json({ message: "No token provided" });
-    }
-
-    // استخراج التوكن من الـ Header
-    const token = authHeader.replace("Bearer ", "");
-
-    // التحقق من صحة التوكن وفك تشفيره
-    const decoded = jwt.verify(token, JWT_SECRET);
-
-    // تخزين البيانات المفكوكة في الطلب للتحقق منها في الخطوات التالية
-    req.tokenValid = decoded;
-
-    // الانتقال إلى الخطوة التالية في الـ Middleware chain
+    const user = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = user;
+    console.log("Decoded user:", user);
     next();
   } catch (error) {
-    console.error("Authentication error:", error.message); // تسجيل الخطأ
-    res.status(401).json({ message: "Authentication failed" });
+    res.clearCookies("Token"); 
+    res.status(401).json({ message: "Invalid token" });
+    console.error("Token verification error:", error);
+    return res.redirect("/");
   }
 };
-
 module.exports = auth;
+
+
