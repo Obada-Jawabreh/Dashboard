@@ -52,9 +52,11 @@ const register = async (req, res) => {
     const token = jwt.sign({ id: newUser.id }, JWT_SECRET, { expiresIn: "1h" });
     console.log("JWT token generated");
 
-    res
-      .status(200)
-      .json({ token, userId: newUser.id, message: "User created", newUser });
+    res.cookie("Token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+    });
   } catch (err) {
     console.error("Error in registration:", err.message);
     res.status(500).json("Server error");
