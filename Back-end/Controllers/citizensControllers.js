@@ -1,4 +1,4 @@
-const Citizens = require("../Models/citizens");
+const Citizens = require("../Models/citizensModels");
 const getCitizenss = async (req, res) => {
   try {
     const citizens = await Citizens.GetCitizens();
