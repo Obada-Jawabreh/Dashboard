@@ -17,9 +17,12 @@ app.use("/api/admin", adminRoutes);
 // -------- citizensRoutes --------
 const citizensRoutes = require("./Routes/citizensRoutes");
 app.use("/api/citizens", citizensRoutes);
-// ------------------------
+// -------- localRoutes ------------
 const localRoutes = require("./Routes/localRoutes");
 app.use("/api/VoteCount/localList", localRoutes);
+// ------------ partyRoutes ------------
+const partyRoutes = require("./Routes/partyRoutes");
+app.use("/api/VoteCount/partyList", partyRoutes);
 // ------------------------
 
 console.log("Routes initialized");

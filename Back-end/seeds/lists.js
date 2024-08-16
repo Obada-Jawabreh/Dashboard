@@ -11,7 +11,7 @@ exports.seed = async function (knex) {
     {
       list_name: "الإصلاح الوطني",
       district_id: 1,
-      vote_count: 0,
+      vote_count: 20,
       logo: "التحالف الوطني للاصلاح - كرامة مواطن حماية وطن",
     },
     {
@@ -29,7 +29,7 @@ exports.seed = async function (knex) {
     {
       list_name: "قائمة العدالة",
       district_id: 1,
-      vote_count: 0,
+      vote_count: 14,
       logo: "العدالة هي الأساس",
     },
     {
@@ -41,7 +41,7 @@ exports.seed = async function (knex) {
     {
       list_name: "قائمة الحرية",
       district_id: 1,
-      vote_count: 0,
+      vote_count: 4,
       logo: "حرية الاختيار حق للجميع",
     },
     {
@@ -65,7 +65,7 @@ exports.seed = async function (knex) {
     {
       list_name: "قائمة الوحدة",
       district_id: 1,
-      vote_count: 0,
+      vote_count: 8,
       logo: "الوحدة قوة",
     },
     {
@@ -83,7 +83,7 @@ exports.seed = async function (knex) {
     {
       list_name: "قائمة الكرامة",
       district_id: 1,
-      vote_count: 0,
+      vote_count: 7,
       logo: "كرامة المواطن حق مشروع",
     },
     {
@@ -101,7 +101,7 @@ exports.seed = async function (knex) {
     {
       list_name: "قائمة الشجاعة",
       district_id: 1,
-      vote_count: 0,
+      vote_count: 8,
       logo: "الشجاعة في التغيير",
     },
     {
