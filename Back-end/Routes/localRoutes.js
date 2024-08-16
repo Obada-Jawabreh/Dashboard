@@ -1,16 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const localControllers = require("../Controllers/localControllers"); // تأكد من المسار الصحيح
+const localControllers = require("../Controllers/localControllers"); 
 
 // تأكد من أن getCitizenss يتم تصديره بشكل صحيح من وحدة التحكم
-router.get("/get-VoteCount", localControllers.getVoteCount); // تأكد من تطابق الاسم
+router.get("/get-TotalVoteCountForOneList", localControllers.getTotalVoteCountForOneList); // تأكد من تطابق الاسم وهاد اهم اشي بالعالم
 
-// تأكد من أن addCitizens, updateCitizens, deleteCitizens يتم تصديرهم بشكل صحيح من وحدة التحكم
-// router.post("/add-citizens", localControllers.addCitizens);
-// router.put("/update-citizens/:id", localControllers.updateCitizens);
-// router.delete("/delete-citizens", localControllers.deleteCitizens);
+// مسار الحصول على مجموع الأصوات لجميع القوائم في دائرة معينة
+router.get("/get-TotalVoteCountForAllList", localControllers.getTotalVoteForAllList);
 
 module.exports = router;
 
-// for running ...
-// http://localhost:5000/api/VoteCount/localList/get-VoteCount
+// for running postman ...
+// http://localhost:5000/api/VoteCount/localList/get-TotalVoteCountForOneList?listName=الإصلاح الوطني&districtId=1
+// http://localhost:5000/api/VoteCount/localList/get-TotalVoteCountForAllList?districtId=1
