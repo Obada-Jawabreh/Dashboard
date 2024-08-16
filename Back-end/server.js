@@ -16,9 +16,9 @@ const adminRoutes = require("./Routes/adminRoutes");
 app.use("/api/admin", adminRoutes);
 
 const citizensRoutes = require("./Routes/citizensRoutes");
-
+const electionsRoutes = require('./Routes/electionsRoutes');
 app.use("/api/citizens", citizensRoutes);
-
+app.use("/api/elections", electionsRoutes);
 
 console.log("Routes initialized");
 

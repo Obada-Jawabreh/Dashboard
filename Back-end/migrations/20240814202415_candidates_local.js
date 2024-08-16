@@ -5,7 +5,6 @@
 exports.up = function (knex) {
     return knex.schema.createTable("candidates_local", function (table) {
       table.string("national_id").notNullable(); // الرقم الوطني كـ string وغير قابل للنول
-      table.string("name").notNullable(); // Candidate name
       table.integer("list_id").unsigned().notNullable(); // Foreign key for list_id
       table.integer('district_id').unsigned().notNullable();; // District name
       table.integer("vote_count").defaultTo(0); // Vote count
