@@ -16,14 +16,16 @@ const adminRoutes = require("./Routes/adminRoutes");
 app.use("/api/admin", adminRoutes);
 // -------- citizensRoutes --------
 const citizensRoutes = require("./Routes/citizensRoutes");
+const electionsRoutes = require('./Routes/electionsRoutes');
 app.use("/api/citizens", citizensRoutes);
+app.use("/api/elections", electionsRoutes);
 // -------- localRoutes ------------
 const localRoutes = require("./Routes/localRoutes");
 app.use("/api/VoteCount/localList", localRoutes);
 // ------------ partyRoutes ------------
 const partyRoutes = require("./Routes/partyRoutes");
 app.use("/api/VoteCount/partyList", partyRoutes);
-// ------------------------
+
 
 console.log("Routes initialized");
 
