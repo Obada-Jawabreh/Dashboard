@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
+    "seed:primary": "npx knex seed:run --specific=citizens.js && npx knex seed:run --specific=districts.js && npx knex seed:run --specific=lists.js && npx knex seed:run --specific=candidates_local.js",
+    "seed:remaining": "npx knex seed:run --specific=contact_us.js && npx knex seed:run --specific=party_lists.js",
+    "seed:all": "npm run seed:primary && npm run seed:remaining",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

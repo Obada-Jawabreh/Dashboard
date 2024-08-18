@@ -1,7 +1,3 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 exports.up = function (knex) {
     return knex.schema.createTable("candidates_local", function (table) {
       table.string("national_id").notNullable(); // الرقم الوطني كـ string وغير قابل للنول
@@ -24,22 +20,18 @@ exports.up = function (knex) {
         .onDelete("CASCADE")
         .onUpdate("CASCADE"); // Reference to the lists table
         table
-        .foreign("district_id")
-        .references("district_id")
-        .inTable("districts")
-        .onDelete("CASCADE")
-        .onUpdate("CASCADE");
+          .foreign("district_id")
+          .references("district_id")
+          .inTable("districts")
+          .onDelete("CASCADE")
+          .onUpdate("CASCADE");
         
         table.primary(['national_id', 'list_id', 'district_id']);
   
     });
   };
   
-  /**
-   * @param { import("knex").Knex } knex
-   * @returns { Promise<void> }
-   */
+
   exports.down = function (knex) {
     return knex.schema.dropTable("candidates_local");
   };
-  

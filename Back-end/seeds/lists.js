@@ -1,13 +1,7 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 exports.seed = async function (knex) {
-  // Deletes ALL existing entries
   await knex("lists").del();
-
-  // Inserts seed entries
-  await knex("lists").insert([
+  await knex.raw("ALTER SEQUENCE lists_list_id_seq RESTART WITH 1");
+  return knex("lists").insert([
     {
       list_name: "الإصلاح الوطني",
       district_id: 1,

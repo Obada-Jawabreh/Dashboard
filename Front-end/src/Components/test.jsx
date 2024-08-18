@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import bg from "./../assets/images/BG.jpg";
+import bg from './../assets/images/BG.jpg'
 const Chat = () => {
   const [nationalIds, setNationalIds] = useState([]);
   const [messages, setMessages] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [userMessages, setUserMessages] = useState([]);
-  const [scrollToBottom, setScrollToBottom] = useState(false);
   const [sendMessages, setSendMessages] = useState({
     Message: "",
     national_id: "",
   });
+  const [backgroundImage, setBackgroundImage] = useState("");
 
   const messagesEndRef = useRef(null);
   const messagesContainerRef = useRef(null);
-  // -----------------------------------------fetchNationalIds------------------------------------------
+
   useEffect(() => {
     const fetchNationalIds = async () => {
       try {
@@ -29,7 +29,6 @@ const Chat = () => {
 
     fetchNationalIds();
   }, []);
-  // -----------------------------------------fetchMessages------------------------------------------
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -62,9 +61,8 @@ const Chat = () => {
 
     return () => clearInterval(interval);
   }, [selectedUser]);
-  // -----------------------------------------fetchUserMessages------------------------------------------
 
-  const fetchUserMessages = async (nationalId, scroll = false) => {
+  const fetchUserMessages = async (nationalId) => {
     try {
       const response = await axios.get(
         `http://localhost:5000/api/chat/chat/${nationalId}`
@@ -73,21 +71,21 @@ const Chat = () => {
         (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
       );
       setUserMessages(sortedMessages);
-      if (scroll) {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-      }
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
       console.error(`Error fetching messages for ${nationalId}:`, error);
     }
   };
-  // -----------------------------------------------------------------------------------
 
   const handleUserClick = (user) => {
     setSelectedUser(user);
-    fetchUserMessages(user.nationalId, false);
+    fetchUserMessages(user.nationalId);
     setSendMessages((prev) => ({ ...prev, national_id: user.nationalId }));
+
+    // تعيين صورة خلفية بناءً على المستخدم
+    const imageUrl = `url(https://example.com/images/${user.nationalId}.jpg)`;
+    setBackgroundImage(imageUrl);
   };
-  // --------------------------------------AddMessage---------------------------------------------
 
   const AddMessage = async () => {
     try {
@@ -96,11 +94,12 @@ const Chat = () => {
         Message: "",
         national_id: selectedUser?.nationalId || "",
       });
-      fetchUserMessages(selectedUser?.nationalId, true); // التمرير لأسفل بعد إرسال الرسالة
+      fetchUserMessages(selectedUser?.nationalId);
     } catch (error) {
       console.error("Error sending message:", error);
     }
   };
+
   return (
     <div className="flex h-screen bg-gray-100 flex-row-reverse">
       <div className="w-1/3 border-r border-gray-300 p-4">
@@ -137,7 +136,15 @@ const Chat = () => {
         </div>
       </div>
 
-      <div className="flex-1 p-4">
+      <div
+  className="flex-1 p-4"
+  style={{
+    backgroundImage: `url(${bg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+
         {selectedUser ? (
           <>
             <div className="flex items-center mb-4">
@@ -154,12 +161,6 @@ const Chat = () => {
               className="space-y-4 h-[calc(100vh-200px)] overflow-y-auto"
               ref={messagesContainerRef}
             >
-               {/* <div  style={{
-                    backgroundImage: `url(${bg})`,
-                    backgroundSize: "cover",
-                    height:"100%"
-                  }}> */}
-                  
               {userMessages.length > 0 ? (
                 userMessages.map((message, index) => (
                   <div
@@ -194,7 +195,7 @@ const Chat = () => {
               )}
               <div ref={messagesEndRef} />
             </div>
-            {/* </div> */}
+
             <div className="mt-4">
               <input
                 type="text"
