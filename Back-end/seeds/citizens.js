@@ -4,76 +4,82 @@ exports.seed = function (knex) {
     .then(function () {
       return knex("citizens").insert([
         {
-          national_id: '1635109387',
-          name: 'زياد ماهر زياد فيومي',
-          religion: 'مسلم',
-          email: 'zeyadfaiyoumi@gmail.com',
-          governorate: 'الزرقاء',
-          electoral_district: 'دائرة الزرقاء',
-          region: 'النزهه/قصبة الزرقاء',
+          national_id: "1635109387",
+          name: "زياد ماهر زياد فيومي",
+          religion: "مسلم",
+          email: "zeyadfaiyoumi@gmail.com",
+          governorate: "الزرقاء",
+          electoral_district: "دائرة الزرقاء",
+          region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: 'ذكر'
+          gender: "ذكر",
+          password: "",
         },
         {
-          national_id: '4592037154',
-          name: 'عباده اسماعيل علي جوابره',
-          religion: 'مسلم',
-          email: 'obadajawabreh6@gmail.com',
-          governorate: 'الزرقاء',
-          electoral_district: 'دائرة الزرقاء',
-          region: 'النزهه/قصبة الزرقاء',
+          national_id: "4592037154",
+          name: "عباده اسماعيل علي جوابره",
+          religion: "مسلم",
+          email: "obadajawabreh6@gmail.com",
+          governorate: "الزرقاء",
+          electoral_district: "دائرة الزرقاء",
+          region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: 'ذكر'
+          gender: "ذكر",
+          password: "",
         },
         {
-          national_id: '8164329087',
-          name: 'مــالك سميـح عبد الحفيـظ شحـادة',
-          religion: 'مسلم',
-          email: 'malek.shehadeh96@gmail.com',
-          governorate: 'الزرقاء',
-          electoral_district: 'دائرة الزرقاء',
-          region: 'النزهه/قصبة الزرقاء',
+          national_id: "8164329087",
+          name: "مــالك سميـح عبد الحفيـظ شحـادة",
+          religion: "مسلم",
+          email: "malek.shehadeh96@gmail.com",
+          governorate: "الزرقاء",
+          electoral_district: "دائرة الزرقاء",
+          region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: 'ذكر'
+          gender: "ذكر",
+          password: "",
         },
         {
-          national_id: '5749268130',
-          name: 'عبدالله فؤاد حسين دبش',
-          religion: 'مسلم',
-          email: 'abdullah.dabash99@gmail.com',
-          governorate: 'الزرقاء',
-          electoral_district: 'دائرة الزرقاء',
-          region: 'النزهه/قصبة الزرقاء',
+          national_id: "5749268130",
+          name: "عبدالله فؤاد حسين دبش",
+          religion: "مسلم",
+          email: "abdullah.dabash99@gmail.com",
+          governorate: "الزرقاء",
+          electoral_district: "دائرة الزرقاء",
+          region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: 'ذكر'
+          gender: "ذكر",
+          password: "",
         },
         {
-          national_id: '2870316498',
-          name: 'آيـة طه حسين الريماوي',
-          religion: 'مسلم',
-          email: 'ayaalrimawi406@gmail.com',
-          governorate: 'الزرقاء',
-          electoral_district: 'دائرة الزرقاء',
-          region: 'النزهه/قصبة الزرقاء',
+          national_id: "2870316498",
+          name: "آيـة طه حسين الريماوي",
+          religion: "مسلم",
+          email: "ayaalrimawi406@gmail.com",
+          governorate: "الزرقاء",
+          electoral_district: "دائرة الزرقاء",
+          region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: 'أنثى'
+          gender: "أنثى",
+          password: "",
         },
         {
-          national_id: '6325148702',
-          name: 'ريم نضال سلامه ابو كرش',
-          religion: 'مسلم',
-          email: 'eng.reemnedal@gmail.com',
-          governorate: 'الزرقاء',
-          electoral_district: 'دائرة الزرقاء',
-          region: 'النزهه/قصبة الزرقاء',
+          national_id: "6325148702",
+          name: "ريم نضال سلامه ابو كرش",
+          religion: "مسلم",
+          email: "eng.reemnedal@gmail.com",
+          governorate: "الزرقاء",
+          electoral_district: "دائرة الزرقاء",
+          region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: 'أنثى'
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1148179138",
@@ -86,6 +92,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "3982922675",
@@ -98,6 +105,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "9085144102",
@@ -110,6 +118,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7174989888",
@@ -122,6 +131,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "6906327616",
@@ -134,6 +144,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "8102055000",
@@ -145,7 +156,8 @@ exports.seed = function (knex) {
           region: "الرحمانيه/الجامعه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "7655308212",
@@ -157,7 +169,8 @@ exports.seed = function (knex) {
           region: "القادسيه/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "2732804342",
@@ -169,7 +182,8 @@ exports.seed = function (knex) {
           region: "جعفر الطيار/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "9763602687",
@@ -182,6 +196,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "2485273807",
@@ -194,6 +209,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "4760633483",
@@ -206,6 +222,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "4748932096",
@@ -218,6 +235,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1406991627",
@@ -230,6 +248,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "9732422972",
@@ -242,6 +261,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7978975300",
@@ -254,6 +274,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "4278883896",
@@ -265,7 +286,8 @@ exports.seed = function (knex) {
           region: "جعفر الطيار/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "5788961262",
@@ -278,6 +300,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "6520719287",
@@ -290,6 +313,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "4600911396",
@@ -301,7 +325,8 @@ exports.seed = function (knex) {
           region: "الوسط التجاري/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1518984293",
@@ -314,6 +339,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "4665777033",
@@ -326,6 +352,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "3852346883",
@@ -337,7 +364,8 @@ exports.seed = function (knex) {
           region: "جبل النصر/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "8440806961",
@@ -349,7 +377,8 @@ exports.seed = function (knex) {
           region: "القويسمه/القويسمه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "4922524258",
@@ -361,7 +390,8 @@ exports.seed = function (knex) {
           region: "طبربور/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "6034611694",
@@ -374,6 +404,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1775843259",
@@ -385,7 +416,8 @@ exports.seed = function (knex) {
           region: "ميسلون/الجامعه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "2573268166",
@@ -397,7 +429,8 @@ exports.seed = function (knex) {
           region: "الصويفيه/وادي السير",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "6160588258",
@@ -410,6 +443,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1048699778",
@@ -421,7 +455,8 @@ exports.seed = function (knex) {
           region: "القادسيه/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "5650607368",
@@ -434,6 +469,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "8029584141",
@@ -445,7 +481,8 @@ exports.seed = function (knex) {
           region: "الرشيد/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1963119928",
@@ -457,7 +494,8 @@ exports.seed = function (knex) {
           region: "اسكان النقب/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "3780676015",
@@ -470,6 +508,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "9675553799",
@@ -482,6 +521,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "5320686642",
@@ -493,7 +533,8 @@ exports.seed = function (knex) {
           region: "رمزي والمحرقه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "6518258652",
@@ -506,6 +547,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "4801558871",
@@ -518,6 +560,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "6587519738",
@@ -530,6 +573,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "8057416538",
@@ -541,7 +585,8 @@ exports.seed = function (knex) {
           region: "الازرق الجنوبي/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "8313206448",
@@ -553,7 +598,8 @@ exports.seed = function (knex) {
           region: "الصويفيه/وادي السير",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "4141337323",
@@ -565,7 +611,8 @@ exports.seed = function (knex) {
           region: "الصويفيه/وادي السير",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7614908021",
@@ -577,7 +624,8 @@ exports.seed = function (knex) {
           region: "القادسيه/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1672159282",
@@ -589,7 +637,8 @@ exports.seed = function (knex) {
           region: "الرشيد/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7304146142",
@@ -601,7 +650,8 @@ exports.seed = function (knex) {
           region: "المطار/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "5874595394",
@@ -614,6 +664,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1432408667",
@@ -626,6 +677,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "8767704414",
@@ -637,7 +689,8 @@ exports.seed = function (knex) {
           region: "جبل النصر/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1103936088",
@@ -650,6 +703,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "5231803711",
@@ -662,6 +716,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "7359678775",
@@ -674,6 +729,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "2925890249",
@@ -685,7 +741,8 @@ exports.seed = function (knex) {
           region: "جناعه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "5206113979",
@@ -697,7 +754,8 @@ exports.seed = function (knex) {
           region: "طبربور/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "6912933931",
@@ -709,7 +767,8 @@ exports.seed = function (knex) {
           region: "طبربور/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "6601866733",
@@ -721,7 +780,8 @@ exports.seed = function (knex) {
           region: "النهاريه/القويسمه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "3429485516",
@@ -733,7 +793,8 @@ exports.seed = function (knex) {
           region: "العال/ناعور",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "8625591090",
@@ -745,7 +806,8 @@ exports.seed = function (knex) {
           region: "المناره/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7291805699",
@@ -758,6 +820,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "2565730470",
@@ -770,6 +833,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "3145841888",
@@ -782,6 +846,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "5944973246",
@@ -793,7 +858,8 @@ exports.seed = function (knex) {
           region: "طبربور/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "2693885559",
@@ -806,6 +872,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1358645139",
@@ -818,6 +885,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "4554823512",
@@ -830,6 +898,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "9904934651",
@@ -841,7 +910,8 @@ exports.seed = function (knex) {
           region: "القويسمه/القويسمه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "6359093506",
@@ -853,7 +923,8 @@ exports.seed = function (knex) {
           region: "البشائر/الجامعه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1929670071",
@@ -865,7 +936,8 @@ exports.seed = function (knex) {
           region: "ميسلون/الجامعه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7938090046",
@@ -877,7 +949,8 @@ exports.seed = function (knex) {
           region: "الحي الشرقي/الجامعه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "5296790538",
@@ -890,6 +963,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1391052928",
@@ -902,6 +976,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "5647600082",
@@ -913,7 +988,8 @@ exports.seed = function (knex) {
           region: "الصويفيه/وادي السير",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "3588967808",
@@ -925,7 +1001,8 @@ exports.seed = function (knex) {
           region: "العال/ناعور",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "9715466221",
@@ -938,6 +1015,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "4558689860",
@@ -949,7 +1027,8 @@ exports.seed = function (knex) {
           region: "القادسيه/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7774266522",
@@ -961,7 +1040,8 @@ exports.seed = function (knex) {
           region: "الامير علي/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "6892007465",
@@ -973,7 +1053,8 @@ exports.seed = function (knex) {
           region: "القادسيه/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "4878670695",
@@ -986,6 +1067,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1351724025",
@@ -997,7 +1079,8 @@ exports.seed = function (knex) {
           region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "4267029334",
@@ -1010,6 +1093,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "8145254084",
@@ -1021,7 +1105,8 @@ exports.seed = function (knex) {
           region: "الوسط التجاري/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "3124960690",
@@ -1033,7 +1118,8 @@ exports.seed = function (knex) {
           region: "الزهراء/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "3407552600",
@@ -1045,7 +1131,8 @@ exports.seed = function (knex) {
           region: "القادسيه/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "9225076739",
@@ -1058,6 +1145,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "7867261729",
@@ -1070,6 +1158,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "6947718237",
@@ -1081,7 +1170,8 @@ exports.seed = function (knex) {
           region: "طبربور/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1796260554",
@@ -1094,6 +1184,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1498475341",
@@ -1106,6 +1197,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "8348814326",
@@ -1118,6 +1210,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "5400869859",
@@ -1129,7 +1222,8 @@ exports.seed = function (knex) {
           region: "المناره/ماركا",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "9145808504",
@@ -1141,7 +1235,8 @@ exports.seed = function (knex) {
           region: "الحي الشرقي/الجامعه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "7805460626",
@@ -1154,6 +1249,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "3158394695",
@@ -1166,6 +1262,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "أنثى",
+          password: "",
         },
         {
           national_id: "1527518504",
@@ -1177,7 +1274,8 @@ exports.seed = function (knex) {
           region: "الصويفيه/وادي السير",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1816125870",
@@ -1189,7 +1287,8 @@ exports.seed = function (knex) {
           region: "الصويفيه/وادي السير",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7281002623",
@@ -1202,6 +1301,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "2961866183",
@@ -1213,7 +1313,8 @@ exports.seed = function (knex) {
           region: "القادسيه/الرصيفه",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "ذكر",
+          gender: "أنثى",
+          password: "",
         },
         {
           national_id: "9860138856",
@@ -1226,6 +1327,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7047791674",
@@ -1238,6 +1340,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "7552330613",
@@ -1250,6 +1353,7 @@ exports.seed = function (knex) {
           is_voted_party: false,
           is_voted_local: false,
           gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1986773614",
@@ -1261,7 +1365,8 @@ exports.seed = function (knex) {
           region: "الحرفيين/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
         {
           national_id: "1994479851",
@@ -1273,7 +1378,8 @@ exports.seed = function (knex) {
           region: "النزهه/قصبة الزرقاء",
           is_voted_party: false,
           is_voted_local: false,
-          gender: "أنثى",
+          gender: "ذكر",
+          password: "",
         },
       ]);
     });

@@ -4,9 +4,7 @@ exports.seed = async function (knex) {
       .del()
       .then(function () {
         // Reset the auto-increment value (sequence)
-        return knex.raw(
-          "ALTER SEQUENCE lists_list_id_seq RESTART WITH 1"
-        );
+        return knex.raw("ALTER SEQUENCE lists_list_id_seq RESTART WITH 1");
       })
       // ---------------------------
       .then(function () {

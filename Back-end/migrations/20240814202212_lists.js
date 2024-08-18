@@ -14,6 +14,7 @@ exports.up = function(knex) {
         table.integer('district_id').unsigned().notNullable() // Foreign key for district_id
         table.integer('vote_count').defaultTo(0); // Vote count
         table.string('logo'); // Column for the logo
+        table.boolean('activation').defaultTo(false); // New column for activation, default to false
         table.timestamps(true, true); // Created at and updated at timestamps
 
         table

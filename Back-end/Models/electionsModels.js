@@ -98,6 +98,4 @@ class Electios {
   }
 }
 
-
-
 module.exports = Electios;

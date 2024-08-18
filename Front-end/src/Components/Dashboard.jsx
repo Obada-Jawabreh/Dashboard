@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import Home from "./Home";
 import Chat from "./Chat";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Request from "./Request ";
 
 const Dashboard = () => {
   return (
@@ -16,6 +17,7 @@ const Dashboard = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/chat" element={<Chat />} />
+              <Route path="/Request" element={<Request />} />
             </Routes>
           </div>
         </div>

@@ -1,7 +1,3 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 exports.up = function (knex) {
     return knex.schema.createTable("candidates_local", function (table) {
       table.string("national_id").notNullable(); // الرقم الوطني كـ string وغير قابل للنول
@@ -35,11 +31,7 @@ exports.up = function (knex) {
     });
   };
   
-  /**
-   * @param { import("knex").Knex } knex
-   * @returns { Promise<void> }
-   */
+
   exports.down = function (knex) {
     return knex.schema.dropTable("candidates_local");
   };
-  
