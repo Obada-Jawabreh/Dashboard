@@ -1,12 +1,16 @@
-import Dashboard from "./Components/Dashboard"
+// import Dashboard from "./Components/Dashboard"
+import PartyVoteTable from "./Components/PartyTable";
+import VoteTable from "./Components/VoteTable";
 
 function App() {
 
   return (
     <>
-<Dashboard/>
+      {/* <Dashboard/> */}
+      <VoteTable />
+      <PartyVoteTable/>
     </>
-  )
+  );
 }
 
 export default App

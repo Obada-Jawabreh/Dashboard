@@ -24,11 +24,11 @@ exports.up = function (knex) {
         .onDelete("CASCADE")
         .onUpdate("CASCADE"); // Reference to the lists table
         table
-        .foreign("district_id")
-        .references("district_id")
-        .inTable("districts")
-        .onDelete("CASCADE")
-        .onUpdate("CASCADE");
+          .foreign("district_id")
+          .references("district_id")
+          .inTable("districts")
+          .onDelete("CASCADE")
+          .onUpdate("CASCADE");
         
         table.primary(['national_id', 'list_id', 'district_id']);
   

@@ -1,16 +1,39 @@
 exports.seed = function (knex) {
-  // Deletes ALL existing entries
+  // ----------------------
+  // كود يساعد في بداية العد من الرقم 1
+  // لكن انتبه من المسميات حسب الجول والقيمة الي بدك تعدل عليها من الجدول
   return knex("party_lists")
     .del()
     .then(function () {
-      // Inserts seed entries
+      // Reset the auto-increment value (sequence)
+      return knex.raw(
+        "ALTER SEQUENCE party_lists_party_list_id_seq RESTART WITH 1"
+      );
+    })
+    // ---------------------------
+    .then(function () {
       return knex("party_lists").insert([
         {
+          national_id: "6518258652", // Replace with actual national ID
+          party_name: " قائمة النهوض",
+          vote_count: 192,
+          pass: true,
+          logo: " قائمة النهوض",
+        },
+        {
+          national_id: "7359678775", // Replace with actual national ID
+          party_name: "الوفاء الوطني",
+          vote_count: 70,
+          pass: true,
+          logo: "الوفاء الوطني",
+        },
+
+        {
           national_id: "1635109387", // Replace with actual national ID
-          party_name: "الشورى الأردني",
+          party_name: "الأرض المباركة",
           vote_count: 150,
           pass: true,
-          logo: "الشورى الأردني",
+          logo: "الأرض المباركة",
         },
         {
           national_id: "9085144102", // Replace with actual national ID
