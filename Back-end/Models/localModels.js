@@ -80,20 +80,14 @@
 
 // module.exports = LocalListCount;
 
-
-
 // src/models/LocalListCount.js
-const knex = require('../config/db'); // تأكد من المسار الصحيح
+const knex = require("../config/db"); // تأكد من المسار الصحيح
 
 class LocalListCount {
   static async getVotesForAllListsInDistrict(districtId) {
     try {
-
-
-
-      
       return await knex("lists")
-        .where("district_id", districtId) 
+        .where("district_id", districtId)
         .select("list_name", "vote_count");
     } catch (err) {
       console.error("Error querying database:", err);
@@ -121,4 +115,3 @@ class LocalListCount {
 }
 
 module.exports = LocalListCount;
-

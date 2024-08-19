@@ -28,6 +28,11 @@ app.use("/api/VoteCount/localList", localRoutes);
 // ------------ partyRoutes ------------
 const partyRoutes = require("./Routes/partyRoutes");
 app.use("/api/VoteCount/partyList", partyRoutes);
+
+// ------------ candidatesRoutes --------------
+const candidatesRoutes = require("./Routes/candidatesRoutes");
+app.use("/api/candidates", candidatesRoutes);
+
 console.log("Routes initialized");
 // RequestLocal
 const RequestLocalRouter = require("./Routes/RequestLocalRoutes");
