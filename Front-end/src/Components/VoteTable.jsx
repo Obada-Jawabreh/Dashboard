@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DistrictVoteChart from "./DistrictVoteChart";
+import CandidateVoteChart from "./CandidateVoteChart";
 
 const VoteTable = () => {
   const [districtId, setDistrictId] = useState("");
@@ -8,6 +10,7 @@ const VoteTable = () => {
   const [numberOfSeats, setNumberOfSeats] = useState(null);
   const [threshold, setThreshold] = useState(null);
   const [error, setError] = useState("");
+  const [filter, setFilter] = useState(""); // فلتر نوع البيانات
 
   const handleFetchData = async () => {
     try {
@@ -28,6 +31,16 @@ const VoteTable = () => {
         { params: { districtId } }
       );
 
+      // جلب بيانات المرشحين مع الفلتر
+      let candidatesUrl = `http://localhost:5000/api/candidates/${districtId}`;
+      if (filter) {
+        candidatesUrl += `/${filter}`; // إضافة الفلتر إلى URL
+      }
+      const candidatesResponse = await axios.get(candidatesUrl);
+
+      // تحقق من بيانات المرشحين
+      console.log("Candidates Data:", candidatesResponse.data);
+
       const votes = votesResponse.data.lists.map((list) => list.vote_count);
       const totalVotes = votesResponse.data.totalVotes;
       const seats = seatsResponse.data.number_of_seats;
@@ -40,7 +53,13 @@ const VoteTable = () => {
       const filteredLists = votesResponse.data.lists.map((item) => ({
         ...item,
         exceedsThreshold: item.vote_count >= thresholdValue,
+        candidates: candidatesResponse.data
+          .filter((candidate) => candidate.list_name === item.list_name)
+          .sort((a, b) => b.vote_count - a.vote_count),
       }));
+
+      // تحقق من البيانات المصفاة
+      console.log("Filtered Lists:", filteredLists);
 
       // إذا لم يكن هناك أصوات تتجاوز العتبة
       if (filteredLists.filter((list) => list.exceedsThreshold).length === 0) {
@@ -107,6 +126,10 @@ const VoteTable = () => {
         decimal_part: item.exceedsThreshold ? decimalParts[index] : 0,
         final_seats: item.exceedsThreshold ? finalSeats[index] : 0,
         exceedsThreshold: item.exceedsThreshold,
+        candidates: item.candidates.map((candidate) => ({
+          name: candidate.name,
+          vote_count: candidate.vote_count,
+        })),
       }));
 
       setListsData(finalData);
@@ -119,11 +142,27 @@ const VoteTable = () => {
     }
   };
 
+  const handleFilterChange = (e) => {
+    const selectedFilter = e.target.value;
+    setFilter(selectedFilter);
+
+    // عند تغيير الفلتر، يمكن إلغاء إدخال رقم الدائرة إذا لزم الأمر
+    setDistrictId("");
+  };
+
   return (
+    // <div className="container mx-auto p-6 bg-gray-100 min-h-screen rtl">
+    //   <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+    //     <div className="bg-black text-white p-6 text-right">
+    //       <h1 className="text-3xl font-bold">
+    //   عداد الأصوات بالقوائم المحلية حسب الدائرة
+    // </h1>
     <div className="container mx-auto p-6 bg-gray-100 min-h-screen rtl">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-black text-white p-6 text-right">
-          <h1 className="text-3xl font-bold">عداد الأصوات بالقوائم المحلية حسب الدائرة</h1>
+          <h1 className="text-3xl font-bold">
+            عداد الأصوات بالقوائم المحلية حسب الدائرة
+          </h1>
         </div>
         <div className="p-6">
           <div className="mb-6 flex items-center">
@@ -142,15 +181,23 @@ const VoteTable = () => {
               value={districtId}
               onChange={(e) => setDistrictId(e.target.value)}
             />
+            <select
+              onChange={handleFilterChange}
+              className="ml-3 p-2 border border-gray-300 rounded-md"
+              value={filter}
+            >
+              <option value="">اختر فلتر</option>
+              <option value="ذكر/مسلم">مسلم وذكر</option>
+              <option value="أنثى">أنثى</option>
+              <option value="ذكر/مسيحي">مسيحي وذكر</option>
+              <option value="ذكر/شركسي">شركسي وذكر</option>
+            </select>
           </div>
 
           {error && <p className="text-red-500 mt-4 text-right">{error}</p>}
 
           {listsData.length > 0 && (
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-4 text-right">
-                 الأصوات لكل قائمة محلية
-              </h2>
+            <>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200 rtl">
                   <thead className="bg-gray-50">
@@ -185,6 +232,12 @@ const VoteTable = () => {
                       >
                         عدد المقاعد النهائي
                       </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >
+                        أسماء المرشحين
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -211,12 +264,32 @@ const VoteTable = () => {
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
                           {item.final_seats}
                         </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
+                          {item.candidates.length > 0 ? (
+                            <ul className="list-disc list-inside">
+                              {item.candidates.map((candidate, i) => (
+                                <li key={i}>
+                                  {candidate.name} ({candidate.vote_count}{" "}
+                                  أصوات)
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            "لا يوجد مرشحين"
+                          )}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-            </div>
+              <div className="mt-8">
+                <DistrictVoteChart listsData={listsData} />
+              </div>
+              <div className="mt-8">
+                <CandidateVoteChart listsData={listsData} />
+              </div>
+            </>
           )}
 
           {(totalVoteCount !== null || numberOfSeats !== null) && (
@@ -241,3 +314,12 @@ const VoteTable = () => {
 };
 
 export default VoteTable;
+
+
+
+
+
+
+
+
+
