@@ -28,9 +28,10 @@ app.use("/api/VoteCount/localList", localRoutes);
 // ------------ partyRoutes ------------
 const partyRoutes = require("./Routes/partyRoutes");
 app.use("/api/VoteCount/partyList", partyRoutes);
-
 console.log("Routes initialized");
-
+// RequestLocal
+const RequestLocalRouter = require("./Routes/RequestLocalRoutes");
+app.use("/api/req", RequestLocalRouter);
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
