@@ -11,7 +11,7 @@ exports.up = function (knex) {
       .defaultTo("Pending"); // الحالة
     table.decimal("percentage_Voters", 5, 2).defaultTo(0); // إجمالي الناخبين
     table.string("Winning_List"); // القائمة الفائزة
-    table.enu("Election_Type", ["Local", "Party"]).notNullable(); // نوع الانتخابات
+    table.enu("Election_Type", ["Local", "Party"]); // نوع الانتخابات
   });
 };
 
