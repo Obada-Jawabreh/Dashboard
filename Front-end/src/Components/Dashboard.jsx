@@ -7,6 +7,8 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Request from "./Request ";
 import ElectionCalendar from "./ElectionCalendar";
 import Debate_screen from "./GenarateCode";
+import ContactUsDashboard from "./contact us";
+import Debate from "./Debates";
 const Dashboard = () => {
   return (
     <BrowserRouter>
@@ -21,7 +23,8 @@ const Dashboard = () => {
               <Route path="/Request" element={<Request />} />
               <Route path="/ElectionCalendar" element={<ElectionCalendar />} />
               <Route path="/Debate_screen" element={<Debate_screen />} />
-
+              <Route path="/cotactus" element={<ContactUsDashboard />} />
+              <Route path="/Debate" element={<Debate />} />
 
             </Routes>
           </div>

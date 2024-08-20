@@ -18,9 +18,15 @@ app.use("/api/admin", adminRoutes);
 const citizensRoutes = require("./Routes/citizensRoutes");
 const electionsRoutes = require("./Routes/electionsRoutes");
 const chatRoutes = require("./Routes/chatRoutes");
+const contactUsRoutes = require('./Routes/contact usRoutes');
+const DebateRoutes = require('./Routes/debatesRoutes');
+
 app.use("/api/citizens", citizensRoutes);
 app.use("/api/elections", electionsRoutes);
 app.use("/api/chat", chatRoutes);
+app.use('/api/contact', contactUsRoutes);
+app.use('/api/debate', DebateRoutes);
+
 
 // -------- localRoutes ------------
 const localRoutes = require("./Routes/localRoutes");
