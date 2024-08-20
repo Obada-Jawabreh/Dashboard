@@ -1,0 +1,28 @@
+/* app.css */
+
+/* إذا كنت قد استخدمت Google Fonts، لن تحتاج إلى تحميل الخط بشكل محلي. */
+
+/* تعريف الخط إذا كنت قد استخدمت Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+/* أو، إذا كنت تستخدم الخط محليًا، قم بإضافة قواعد @font-face */
+@font-face {
+  font-family: 'Amiri';
+  src: url('/fonts/amiri-regular.woff2') format('woff2'),
+       url('/fonts/amiri-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amiri';
+  src: url('/fonts/amiri-bold.woff2') format('woff2'),
+       url('/fonts/amiri-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* تطبيق الخط على العناصر */
+body {
+  font-family: 'Amiri', serif;
+}
