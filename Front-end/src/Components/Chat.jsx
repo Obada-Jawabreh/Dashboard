@@ -154,12 +154,12 @@ const Chat = () => {
               className="space-y-4 h-[calc(100vh-200px)] overflow-y-auto"
               ref={messagesContainerRef}
             >
-               {/* <div  style={{
+              {/* <div  style={{
                     backgroundImage: `url(${bg})`,
                     backgroundSize: "cover",
                     height:"100%"
                   }}> */}
-                  
+
               {userMessages.length > 0 ? (
                 userMessages.map((message, index) => (
                   <div
@@ -224,4 +224,3 @@ const Chat = () => {
 };
 
 export default Chat;
-
