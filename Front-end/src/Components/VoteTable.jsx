@@ -153,7 +153,7 @@ const VoteTable = () => {
   return (
     <div className="container mx-auto p-6 bg-gray-100 min-h-screen rtl">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="bg-black text-white p-6 text-right">
+        <div className="bg-black text-white p-6 text-center">
           <h1 className="text-3xl font-bold">
             عداد الأصوات بالقوائم المحلية حسب الدائرة
           </h1>
@@ -171,15 +171,15 @@ const VoteTable = () => {
               placeholder="ادخل رقم الدائرة"
               name="districtId"
               id="districtId"
-              className="flex-1 min-w-[150px] text-right p-2 focus:ring-black focus:border-black block w-full rounded-md shadow-sm border-gray-300"
+              className="flex-1 min-w-[150px] text-center p-2 focus:ring-black focus:border-black block w-full rounded-md shadow-sm border-gray-300"
               value={districtId}
               onChange={(e) => setDistrictId(e.target.value)}
             />
             <div className="relative">
               <select
                 onChange={handleFilterChange}
-                className="block w-full pl-8 pr-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition-colors duration-300 appearance-none"
                 value={filter}
+                className="block w-full pl-8 text-right space-x-2 pr-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-black focus:border-black transition-colors duration-300 appearance-none"
               >
                 <option value="">اختر فلتر</option>
                 <option value="ذكر/مسلم">مسلم وذكر</option>
@@ -202,106 +202,90 @@ const VoteTable = () => {
                   />
                 </svg>
               </div>
-
-              {/* قائمة منسدلة شفافة وذات تأثيرات */}
-              <style jsx>{`
-                select {
-                  background: rgba(255, 255, 255, 0.9);
-                  border: 1px solid rgba(0, 0, 0, 0.2);
-                  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                  transition: background 0.2s ease;
-                }
-
-                select:hover,
-                select:focus {
-                  background: rgba(255, 255, 255, 1);
-                  border-color: rgba(0, 0, 0, 0.3);
-                }
-
-                /* إضافة تأثير الانسياب للقائمة المنسدلة عند الفتح */
-                select option {
-                  transition: background 0.2s ease;
-                }
-
-                select option:hover {
-                  background: rgba(0, 0, 0, 0.1);
-                }
-              `}</style>
             </div>
           </div>
 
-          {error && <p className="text-red-500 mt-4 text-right">{error}</p>}
+          {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
 
           {listsData.length > 0 && (
             <>
-              <div className="overflow-x-auto bg-white shadow-md rounded-lg">
-                {/* --------------------------------------------- */}
-                <table className="min-w-full divide-y divide-gray-200 rtl">
-                  <thead className="bg-gray-800 text-white">
-                    <tr>
-                      <th className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
-                        أسماء المرشحين
-                      </th>
-                      <th className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
-                        عدد المقاعد النهائي
-                      </th>
-                      <th className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
-                        الأرقام العشرية
-                      </th>
-                      <th className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
-                        الأرقام الصحيحة الأولية
-                      </th>
-                      <th className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
-                        الأصوات
-                      </th>
-                      <th className="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider">
-                        اسم القائمة
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {listsData.map((item, index) => (
-                      <tr
-                        key={index}
-                        className={`hover:bg-gray-50 ${
-                          !item.exceedsThreshold ? "bg-red-100" : ""
-                        }`}
-                      >
-                        <td className="px-6 py-4 text-sm text-gray-700 whitespace-nowrap">
-                          {item.candidates.length > 0 ? (
-                            <ul className="list-disc list-inside pl-5">
-                              {item.candidates.map((candidate, i) => (
-                                <li key={i} className="flex justify-between">
-                                  <span>{candidate.name}</span>
-                                  <span className="text-gray-500">
-                                    ({candidate.vote_count} أصوات)
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
-                          ) : (
-                            "لا يوجد مرشحين"
-                          )}
-                        </td>
-                        <td className="px-6 py-4 text-right text-sm text-gray-700 whitespace-nowrap">
-                          {item.final_seats}
-                        </td>
-                        <td className="px-6 py-4 text-right text-sm text-gray-700 whitespace-nowrap">
-                          {item.decimal_part.toFixed(2)}
-                        </td>
-                        <td className="px-6 py-4 text-right text-sm text-gray-700 whitespace-nowrap">
-                          {item.initial_integer_part}
-                        </td>
-                        <td className="px-6 py-4 text-right text-sm text-gray-700 whitespace-nowrap">
-                          {item.vote_count}
-                        </td>
-                        <td className="px-6 py- text-right text-sm text-gray-700 whitespace-nowrap">
-                          {item.list_name}
-                        </td>
+              <div className="relative bg-transparent">
+                <img
+                  src="https://i.imgur.com/uLXe1US.png"
+                  alt="Background"
+                  className="absolute inset-0 w-full h-full object-fet opacity-80"
+                />
+                <div className="relative p-6 bg-gray-200 bg-opacity-50 rounded-lg">
+                  <table className="min-w-full divide-y divide-gray-100 rtl bg-transparent">
+                    {" "}
+                    <thead className="  text-white">
+                      {/* --------------------------------------------- */}
+
+                      <tr>
+                        <th className="px-6 py-3  text-center text-lg underline underline-offset-8 font-extrabold text-gray-900 uppercase tracking-wider">
+                          أسماء المرشحين
+                        </th>
+                        <th className="px-6 py-3  text-center text-lg underline underline-offset-8 font-extrabold text-gray-900 uppercase tracking-wider">
+                          عدد المقاعد النهائي
+                        </th>
+                        <th className="px-6 py-3  text-center text-lg underline underline-offset-8 font-extrabold text-gray-900 uppercase tracking-wider">
+                          الأرقام العشرية
+                        </th>
+                        <th className="px-6 py-3  text-center text-lg underline underline-offset-8 font-extrabold text-gray-900 uppercase tracking-wider">
+                          الأرقام الصحيحة الأولية
+                        </th>
+                        <th className="px-6 py-3  text-center text-lg underline underline-offset-8 font-extrabold text-gray-900 uppercase tracking-wider">
+                          الأصوات
+                        </th>
+                        <th className="px-6 py-3  text-center text-lg underline underline-offset-8 font-extrabold text-gray-900 uppercase tracking-wider">
+                          اسم القائمة
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody className="bg-transparent divide-y divide-gray-100">
+                      {listsData.map((item, index) => (
+                        <tr
+                          key={index}
+                          className={`hover:bg-gray-50 ${
+                            !item.exceedsThreshold ? "bg-red-100" : ""
+                          }`}
+                        >
+                          <td className="px-6 py-4 text-base text-gray-700 whitespace-nowrap">
+                            {item.candidates.length > 0 ? (
+                              <ul className="list-disc list-inside pl-5">
+                                {item.candidates.map((candidate, i) => (
+                                  <li key={i} className="flex justify-between">
+                                    <span>{candidate.name}</span>
+                                    <span className="text-gray-500">
+                                      ({candidate.vote_count} أصوات)
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              "لا يوجد مرشحين"
+                            )}
+                          </td>
+                          <td className="px-6 py-4 text-center text-base text-gray-700 whitespace-nowrap">
+                            {item.final_seats}
+                          </td>
+                          <td className="px-6 py-4 text-center text-base text-gray-700 whitespace-nowrap">
+                            {item.decimal_part.toFixed(2)}
+                          </td>
+                          <td className="px-6 py-4 text-center text-base text-gray-700 whitespace-nowrap">
+                            {item.initial_integer_part}
+                          </td>
+                          <td className="px-6 py-4 text-center text-base text-gray-700 whitespace-nowrap">
+                            {item.vote_count}
+                          </td>
+                          <td className="px-6 py- text-center text-base text-gray-700 whitespace-nowrap">
+                            {item.list_name}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <div className="mt-8">
                 <DistrictVoteChart listsData={listsData} />
@@ -313,7 +297,7 @@ const VoteTable = () => {
           )}
 
           {(totalVoteCount !== null || numberOfSeats !== null) && (
-            <div className="mt-8 bg-white rounded-lg p-6 shadow-md text-right">
+            <div className="mt-8 bg-white rounded-lg p-6 shadow-md text-center">
               <h2 className="text-xl font-semibold mb-2">
                 إجمالي الأصوات لجميع القوائم
               </h2>
